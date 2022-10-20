@@ -21,8 +21,7 @@ def app_layout():
         specific_site_succes = spacex_df[spacex_df['Launch Site'] == option].groupby('class')[['Launch Site']].count().reset_index()  
         specific_site_succes.columns = ['class', 'count']
         #gerando o grafico em pizza para sucesso individual
-        fig2 = px.pie(specific_site_succes, values='count', names='class', title=f'{option} Site success',
-                      labels={'0':'a','1':'b'})
+        fig2 = px.pie(specific_site_succes, values='count', names='class', title=f'{option} Site success')
         
         fig2.update_layout(font_size=20 )
         #disponibilizando o gráfico
